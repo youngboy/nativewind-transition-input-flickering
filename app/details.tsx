@@ -1,7 +1,5 @@
 import { Stack, useLocalSearchParams } from 'expo-router';
-
-import { Container } from '~/components/Container';
-import { ScreenContent } from '~/components/ScreenContent';
+import { TextInput, View } from 'react-native';
 
 export default function Details() {
   const { name } = useLocalSearchParams();
@@ -9,9 +7,13 @@ export default function Details() {
   return (
     <>
       <Stack.Screen options={{ title: 'Details' }} />
-      <Container>
-        <ScreenContent path="screens/details.tsx" title={`Showing details for user ${name}`} />
-      </Container>
+      <View className="flex-1">
+        <View className="bg-green-500 flex-1">
+        </View>
+        <View className="bg-yellow-500 h-20">
+          <TextInput className='flex-1' placeholder='Enter something' />
+        </View>
+      </View>
     </>
   );
 }
